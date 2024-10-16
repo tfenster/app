@@ -2,8 +2,10 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
 	"name": "evcc app",
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+	"dockerComposeFile": ["../docker-compose.yml"],
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"postCreateCommand": "npm install",
+	"service": "app",
 	"customizations": {
 		"vscode": {
 			"extensions": [
