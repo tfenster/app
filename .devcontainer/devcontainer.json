@@ -2,15 +2,24 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
 	"name": "evcc app",
-	"dockerComposeFile": ["../docker-compose.yml"],
+	"dockerComposeFile": ["../docker-compose.yaml"],
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	"postCreateCommand": "npm install",
 	"service": "app",
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"esbenp.prettier-vscode"
+				"esbenp.prettier-vscode",
+				"ms-azuretools.vscode-docker"
 			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {
+			"moby": true,
+			"installDockerBuildx": true,
+			"version": "latest",
+			"dockerDashComposeVersion": "v2"
 		}
 	}
 }
